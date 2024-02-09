@@ -39,9 +39,9 @@ function getPictures() {
 function createPicture() {
   return {
     // поля описывающие фотографию
-    id: getRandomArrayElement(),
-    avatar: getRandomArrayElement(),
-    message: getRandomArrayElement(),
-    name: getRandomArrayElement(),
+    id: getRandomArrayElement(id),
+    avatar: getRandomArrayElement(avatar),
+    message: getRandomArrayElement(message),
+    name: getRandomArrayElement(name),
   };
 }
