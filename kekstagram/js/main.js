@@ -38,7 +38,6 @@ function getPictures() {
 function createComment() {
   return {
     // поля описывающие фотографию
-return {
     id: getRandomPositiveInteger( 1, 100), // случайное число для id, можете выбрать другой диапазон
     avatar: `img/avatar-${getRandomPositiveInteger( 1, 6)}.svg`,
     message: getRandomArrayElement(message),
