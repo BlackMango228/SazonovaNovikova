@@ -48,12 +48,12 @@ return {
 
 function createPicture(id){
   const pictureCommentsCount = getRandomPositiveInteger( a: 1, b: 5); // Случайное количество комментариев от 1 до 5
-  const pictureComments[ = new Array(pictureCommentsCount).fill( vale: null).map(() :{…) => createComment(id));
+  const pictureComments = new Array(pictureCommentsCount).fill( vale: null).map(() :{…) => createComment(id));
   return {
     id: id,
-    url: "photos/${id}.jpg",
+    url: `photos/${id}.jpg`,
     description: getRandomArrayElement(descriptions),
-    likes: getRandomPositiveInteger( a: 15, b: 200),
+    likes: getRandomPositiveInteger( 15, 200),
     comments: pictureComments,
   }
 }
