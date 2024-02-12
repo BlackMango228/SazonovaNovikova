@@ -1,5 +1,5 @@
 const message = []
-const nikname = []
+const nickname = []
 const descriptions = []
 
 function getRandomPositiveInteger (a, b) {
@@ -45,7 +45,7 @@ function createComment() {
     id: getRandomPositiveInteger( 1, 100), // случайное число для id, можете выбрать другой диапазон
     avatar: `img/avatar-${getRandomPositiveInteger( 1, 6)}.svg`,
     message: getRandomArrayElement(message),
-    name: getRandomArrayElement(nikname),
+    name: getRandomArrayElement(nickname),
   };
 }
 
