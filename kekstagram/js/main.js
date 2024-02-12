@@ -7,13 +7,12 @@ function getRandomPositiveInteger (a, b) {
   // мы округляем к ближайшему большему целому с помощью Math.ceil,
   // а верхнюю границу - к ближайшему меньшему целому с помощью Math.floor
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b))):
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
   // Обратите внимание, чтобы учесть условие, что диапазон может быть [0, x).
   // мы не ругаем пользователя за переданное отрицательное число.
   // а просто берём его по модулю с помощью Math abs
-  |/ Дальше используем Math random() для получения случайного дробного числа в диапазоне [0, 1).
-  // которое домножаем на разницу между переданными числами плюс единица - это будет наша случайная
-  дельта.
+  // Дальше используем Math random() для получения случайного дробного числа в диапазоне [0, 1).
+  // которое домножаем на разницу между переданными числами плюс единица - это будет наша случайная дельта.
   // После нужно сложить дельту с минимальным значением, чтобы получить итоговое случайное число.
   const result = Math.random() * (upper - lower + 1) + lower;
   // "Плюс единица", чтобы включить верхнюю границу диапазона в случайные числа
@@ -36,12 +35,25 @@ function getPictures() {
   return агг;// - вернуть массив
 }
 
-function createPicture() {
+function createComment() {
   return {
     // поля описывающие фотографию
-    id: getRandomArrayElement(id),
-    avatar: getRandomArrayElement(avatar),
+return {
+    id: getRandomPositiveInteger( 1, 100), // случайное число для id, можете выбрать другой диапазон
+    avatar: `img/avatar-${getRandomPositiveInteger( 1, 6)}.svg`,
     message: getRandomArrayElement(message),
-    name: getRandomArrayElement(name),
+    name: getRandomArrayElement(nikname),
   };
+}
+
+function createPicture(id){
+  const pictureCommentsCount = getRandomPositiveInteger( a: 1, b: 5); // Случайное количество комментариев от 1 до 5
+  const pictureComments[ = new Array(pictureCommentsCount).fill( vale: null).map(() :{…) => createComment(id));
+  return {
+    id: id,
+    url: "photos/${id}.jpg",
+    description: getRandomArrayElement(descriptions),
+    likes: getRandomPositiveInteger( a: 15, b: 200),
+    comments: pictureComments,
+  }
 }
