@@ -49,12 +49,8 @@ function getRandomArrayElement(array) {
 }
 
 function getPictures() {
-  const arr = []; // - создать массив
-  for (let i = 0; i < 25; i++) { // - 25 раз создать объект с данными фотографии и положить его в массив
-    const picture = createPicture();
-    arr.push(picture);
-  }
-  return агг;// - вернуть массив
+  const arr = Array.from({length:25},(_, index)=> createPicture(index + 1));
+  return arr;// - вернуть массив
 }
 
 function createComment() {
@@ -78,3 +74,5 @@ function createPicture(id){
     comments: pictureComments,
   }
 }
+
+console.log(getPictures());
