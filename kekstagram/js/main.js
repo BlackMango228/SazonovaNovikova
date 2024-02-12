@@ -1,3 +1,7 @@
+const message = []
+const nikname = []
+const descriptions = []
+
 function getRandomPositiveInteger (a, b) {
   // Чтобы не заставлять пользователя нашей функции помнить порядок аргументов,
   // реализуем поддержку передачи минимального и максимального значения в любом порядке,
