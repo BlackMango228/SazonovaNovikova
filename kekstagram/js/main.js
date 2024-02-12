@@ -33,7 +33,7 @@ function getRandomArrayElement(array) {
 function getPictures() {
   const arr = []; // - создать массив
   for (let i = 0; i < 25; i++) { // - 25 раз создать объект с данными фотографии и положить его в массив
-    const picture = createPicture();
+    const picture = createComment();
     arr.push(picture);
   }
   return агг;// - вернуть массив
