@@ -16,6 +16,8 @@ const descriptions = [
   'Я игроман. Минусы будут?',
   'Люблю покушать,вопросы?',
   'История жизни хороша лишь тогда,когда у неё достойный конец'
+  'Сладко жить не запретишь',
+  'Сюдааа'
 ]
 
 function getRandomPositiveInteger (a, b) {
@@ -54,7 +56,7 @@ function getPictures() {
 function createComment() {
   return {
     // поля описывающие фотографию
-    id: getRandomPositiveInteger( 1, 100), // случайное число для id, можете выбрать другой диапазон
+    id: getRandomPositiveInteger( 1, 100), // задаём диапазон рандомных положительных чисел
     avatar: `img/avatar-${getRandomPositiveInteger( 1, 6)}.svg`,
     message: getRandomArrayElement(message),
     name: getRandomArrayElement(nickname),
@@ -62,7 +64,7 @@ function createComment() {
 }
 
 function createPicture(id){
-  const pictureCommentsCount = getRandomPositiveInteger( 1, 5); // Случайное количество комментариев от 1 до 5
+  const pictureCommentsCount = getRandomPositiveInteger( 1, 5); // задаём рандомное количество наших комментариев от 1 до 5
   const pictureComments = new Array(pictureCommentsCount).fill(null).map(() => createComment(id));
   return {
     id: id,
