@@ -1,5 +1,5 @@
 import {message, descriptions, nickname} from './data.js';
-import {getRandomPositiveInteger, getRandomArrayElement} from '/util.js';
+import {getRandomPositiveInteger, getRandomArrayElement} from './util.js';
 function createComment() {
     return {
         // поля описывающие фотографию
