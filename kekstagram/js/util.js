@@ -1,5 +1,3 @@
-import {message, descriptions, nickname} from './data.js';
-
 function getRandomPositiveInteger (a, b) {
     // Чтобы не заставлять пользователя нашей функции помнить порядок аргументов,
     // реализуем поддержку передачи минимального и максимального значения в любом порядке,
@@ -28,30 +26,4 @@ function getRandomArrayElement(array) {
     return array[getRandomPositiveInteger(0, array.length - 1)];
 }
 
-function createComment() {
-    return {
-        // поля описывающие фотографию
-        id: getRandomPositiveInteger( 1, 100), // задаём диапазон рандомных положительных чисел
-        avatar: `img/avatar-${getRandomPositiveInteger( 1, 6)}.svg`,
-        message: getRandomArrayElement(message),
-        name: getRandomArrayElement(nickname),
-    };
-}
-
-function createPicture(id){
-    const pictureCommentsCount = getRandomPositiveInteger( 1, 5); // задаём рандомное количество наших комментариев от 1 до 5
-    const pictureComments = new Array(pictureCommentsCount).fill(null).map(() => createComment(id));
-    return {
-        id: id,
-        url: `photos/${id}.jpg`,
-        description: getRandomArrayElement(descriptions),
-        likes: getRandomPositiveInteger( 15, 200),
-        comments: pictureComments,
-    }
-}
-function getPictures() {
-    const arr = Array.from({length:25},(_, index)=> createPicture(index + 1));
-    return arr;// - вернуть массив
-}
-
-export {getPictures}
+export {getRandomPositiveInteger, getRandomArrayElement}
