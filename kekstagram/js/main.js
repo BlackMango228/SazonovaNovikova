@@ -1,3 +1,6 @@
-import {getPictures} from "./create.js";
+import {renderPictures} from './show-pictures.js';
+import {getPictures} from './data-create.js';
 
-console.log(getPictures());
+renderPictures(getPictures());
+
+
