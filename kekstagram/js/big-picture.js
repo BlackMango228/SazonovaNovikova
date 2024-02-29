@@ -4,7 +4,7 @@ const body = document.querySelector('body');
 const close = document.querySelector('.big-picture__cancel');
 
 const renderPictureDetails = (pictureData) => {
-  bigPicture.querySelector('.big-picture__img img').src = pictureData.url;
+  bigPicture.querySelector('.big-picture__img img').src = pictureData.url; //находит элемент в шаблоне bigPicture в классе  big-picture__img элемент img и присваивает url фото
   bigPicture.querySelector('.likes-count').textContent = pictureData.likes;
   bigPicture.querySelector('.comments-count').textContent = pictureData.comments.length;
   bigPicture.querySelector('.social__caption').textContent = pictureData.description;
@@ -14,13 +14,13 @@ const renderComments = (comments) => {
   const commentsList = document.querySelector('.social__comments');
   commentsList.innerHTML = '';
 
-  comments.forEach((comment) => {
-    const commentElement = document.createElement('li');
-    commentElement.innerHTML = `<li class="social__comment">
+  comments.forEach((comment) => {                                                           // должна быть выполнена после того, как другая функция завершила выполнение. Принимает item, index, arr
+    const commentElement = document.createElement('li');                  // Создаётся новый ел ли
+    commentElement.innerHTML = `<li class="social__comment">                                      
       <img class="social__picture" src="${comment.avatar}" alt="${comment.name}" width="35" height="35">
-      <p class="social__text">${comment.message}</p></li>`;
+      <p class="social__text">${comment.message}</p></li>`;                                      //Позволяет читать и изменять содержимое HTML-элемента. При записи старое содержимое заменяется новым.содержимое
 
-    commentsList.appendChild(commentElement);
+    commentsList.appendChild(commentElement); //позволяет вставить в конец другой элемент.
   });
 };
 
