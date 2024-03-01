@@ -8,7 +8,7 @@ const picturesContainer = document.querySelector('.pictures');
 
 // Функция для создания элемента картинки на основе объекта данных
 function createPictureElement(pictureData) {
-  const pictureElement = pictureTemplate.cloneNode(true);
+  const pictureElement = pictureTemplate.cloneNode(true); //клонирование элемента. Принимает методы: prepend, append, appendChild и  др
 
   pictureElement.querySelector('.picture__img').src = pictureData.url;
   pictureElement.querySelector('.picture__likes').textContent = pictureData.likes;
